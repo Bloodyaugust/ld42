@@ -21,9 +21,13 @@ GameObject:
   - component: {fileID: 4694178128476260}
   - component: {fileID: 212575285349891680}
   - component: {fileID: 58883118045712078}
-  m_Layer: 0
+  - component: {fileID: 50373591662471692}
+  - component: {fileID: 114173235181481642}
+  - component: {fileID: 114350433917399548}
+  - component: {fileID: 114091951257648426}
+  m_Layer: 8
   m_Name: projectile
-  m_TagString: Untagged
+  m_TagString: PlayerProjectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -41,6 +45,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &50373591662471692
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1627882057404088}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 0.05
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 4
 --- !u!58 &58883118045712078
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -56,6 +80,42 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.25
+--- !u!114 &114091951257648426
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1627882057404088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f634b5d3436473640addc1a572639ef4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DeathTag: Terrain
+--- !u!114 &114173235181481642
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1627882057404088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f634b5d3436473640addc1a572639ef4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DeathTag: Enemy
+--- !u!114 &114350433917399548
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1627882057404088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8dc89796f7358fd44b5319ce615465c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Lifetime: 3
 --- !u!212 &212575285349891680
 SpriteRenderer:
   m_ObjectHideFlags: 1

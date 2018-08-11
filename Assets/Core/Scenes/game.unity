@@ -191,10 +191,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b8c96e2cdc154e848a3d9fe62464d42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CameraTargets: []
+  CameraTargets:
+  - TargetTransform: {fileID: 1921942031}
+    TargetInfluenceH: 1
+    TargetInfluenceV: 1
+    TargetOffset: {x: 0, y: 0}
   CenterTargetOnStart: 0
   Axis: 0
-  UpdateType: 0
+  UpdateType: 1
   FollowHorizontal: 1
   HorizontalFollowSmoothness: 0.15
   FollowVertical: 1
@@ -376,7 +380,7 @@ GameObject:
   - component: {fileID: 863760895}
   m_Layer: 0
   m_Name: Tilemap
-  m_TagString: Untagged
+  m_TagString: Lava
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12929,7 +12933,7 @@ TilemapCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -13502,7 +13506,7 @@ GameObject:
   - component: {fileID: 1869076051}
   m_Layer: 0
   m_Name: Layer2
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13657,6 +13661,11 @@ TilemapCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
+--- !u!4 &1921942031 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4711054884575140, guid: f5fd2de4756886f4cbf637796100994d,
+    type: 2}
+  m_PrefabInternal: {fileID: 2050686424}
 --- !u!1001 &2050686424
 Prefab:
   m_ObjectHideFlags: 0
@@ -13666,7 +13675,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4711054884575140, guid: f5fd2de4756886f4cbf637796100994d, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0.5
+      value: 2.71
       objectReference: {fileID: 0}
     - target: {fileID: 4711054884575140, guid: f5fd2de4756886f4cbf637796100994d, type: 2}
       propertyPath: m_LocalPosition.y
