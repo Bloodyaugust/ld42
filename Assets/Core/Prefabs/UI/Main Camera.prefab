@@ -28,6 +28,7 @@ GameObject:
   - component: {fileID: 114267343110268940}
   - component: {fileID: 114240336170666404}
   - component: {fileID: 82948889245845750}
+  - component: {fileID: 114984077416359052}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -57,7 +58,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.4392157, g: 0.06666667, b: 0, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -205,7 +206,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnemyDiedAudioClip: {fileID: 8300000, guid: ace3f268a46f3f2488a860cbfcfcc12f, type: 3}
+  PlayerDamageAudioClips:
+  - {fileID: 8300000, guid: 49a87127835028e4aad6a30217ade2a5, type: 3}
+  - {fileID: 8300000, guid: f5bf443fa5fbf8a479e6630ebae1c931, type: 3}
+  - {fileID: 8300000, guid: 6fbf700915f69e248991805f13c56751, type: 3}
+  - {fileID: 8300000, guid: 7d1e828790052da4baf44e3819be8efe, type: 3}
+  WaveCompletedText: {fileID: 1299796366552890, guid: 3a2cab63f7f48b54fab4da5781995624,
+    type: 2}
   EnemyDied:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  EnableWaves:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  DisableWaves:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  GameLoaded:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  WaveCompleted:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
@@ -224,6 +252,7 @@ MonoBehaviour:
   _pc2D: {fileID: 114268643724553348}
   ShakePresets:
   - {fileID: 11400000, guid: e28b7a815db56d54fb6ac11c9e4c0b0a, type: 2}
+  - {fileID: 11400000, guid: 9599fd4258b2b8e44a2c5e66f665dd34, type: 2}
   ConstantShakePresets: []
   StartConstantShakePreset: {fileID: 0}
   CurrentConstantShakePreset: {fileID: 0}
@@ -238,11 +267,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b8c96e2cdc154e848a3d9fe62464d42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CameraTargets:
-  - TargetTransform: {fileID: 0}
-    TargetInfluenceH: 1
-    TargetInfluenceV: 1
-    TargetOffset: {x: 0, y: 0}
+  CameraTargets: []
   CenterTargetOnStart: 0
   Axis: 0
   UpdateType: 1
@@ -279,6 +304,21 @@ MonoBehaviour:
   MaxZoomInAmount: 1.2
   MaxZoomOutAmount: 1.2
   CurrentVelocity: 0
+--- !u!114 &114984077416359052
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1571980327791870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22dd85abe00fa124db37a8c583a410ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TimeBetweenWaves: 5
+  Waves:
+  - {fileID: 11400000, guid: 6d3c1f16b3a88ae4ea379cbe47694db4, type: 2}
+  - {fileID: 11400000, guid: 1de59f75f92dc2e43b03b9bc702dbcfe, type: 2}
 --- !u!124 &124284705815189812
 Behaviour:
   m_ObjectHideFlags: 1

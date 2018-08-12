@@ -17,6 +17,8 @@ public class AddForceTowardPlayer : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		_rigidbody.AddForce((_player.transform.position - transform.position).normalized * MoveForce);
+		if (_player != null) {
+			_rigidbody.AddForce((_player.transform.position - transform.position).normalized * MoveForce);
+		}
 	}
 }

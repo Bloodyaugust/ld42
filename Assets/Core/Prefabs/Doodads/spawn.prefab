@@ -20,10 +20,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4478483480676612}
   - component: {fileID: 212360877314767348}
-  - component: {fileID: 114635941320805762}
   m_Layer: 0
   m_Name: spawn
-  m_TagString: Untagged
+  m_TagString: Spawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -41,21 +40,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114635941320805762
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1603857608133640}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eca70c0b5ad3ead409295c51924850bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SpawnForce: 1
-  SpawnInterval: 5
-  EnemyPrefab: {fileID: 1858975884818524, guid: 67fffa0f9b08b034c981785fe034c64d,
-    type: 2}
 --- !u!212 &212360877314767348
 SpriteRenderer:
   m_ObjectHideFlags: 1

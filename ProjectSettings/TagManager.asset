@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Terrain
   - Lava
+  - Spawn
   layers:
   - Default
   - TransparentFX

@@ -26,6 +26,7 @@ GameObject:
   - component: {fileID: 114911127888135910}
   - component: {fileID: 114950498762310344}
   - component: {fileID: 114538608841441876}
+  - component: {fileID: 114664738724857694}
   m_Layer: 0
   m_Name: enemy
   m_TagString: Enemy
@@ -59,7 +60,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 5
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0.5
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -106,6 +107,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DamageAmount: 2
   DamageInterval: 1
+--- !u!114 &114664738724857694
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1858975884818524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59ad12d8be8e79442b5afc971c5add14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114911127888135910
 MonoBehaviour:
   m_ObjectHideFlags: 1

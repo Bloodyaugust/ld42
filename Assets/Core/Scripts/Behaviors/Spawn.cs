@@ -21,7 +21,7 @@ public class Spawn : MonoBehaviour {
 	void Update () {
 		_timeToSpawn -= Time.deltaTime;
 
-		if (_timeToSpawn <= 0) {
+		if (_timeToSpawn <= 0 && _player != null) {
 			GameObject newEnemy = GameObject.Instantiate(EnemyPrefab, transform.position, Quaternion.identity);
 
 			newEnemy.GetComponent<Rigidbody2D>().AddForce((_player.transform.position - transform.position).normalized * SpawnForce, ForceMode2D.Impulse);
