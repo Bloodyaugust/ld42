@@ -264,6 +264,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BobAmount: 0.2
   MoveForce: 5
+  MoveForceScalar: 0.5
 --- !u!114 &114911127888135910
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -276,6 +277,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PushForce: 15
+  PushForceScalar: 2
 --- !u!114 &114935205531927626
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -305,6 +307,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StartingHealth: 2
+  HealthScalar: 1
+  Died:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!212 &212604912704901168
 SpriteRenderer:
   m_ObjectHideFlags: 1

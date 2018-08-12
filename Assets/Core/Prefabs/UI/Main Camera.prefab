@@ -211,8 +211,11 @@ MonoBehaviour:
   - {fileID: 8300000, guid: f5bf443fa5fbf8a479e6630ebae1c931, type: 3}
   - {fileID: 8300000, guid: 6fbf700915f69e248991805f13c56751, type: 3}
   - {fileID: 8300000, guid: 7d1e828790052da4baf44e3819be8efe, type: 3}
+  PlayerPrefab: {fileID: 1654893678590748, guid: f5fd2de4756886f4cbf637796100994d,
+    type: 2}
   WaveCompletedText: {fileID: 1299796366552890, guid: 3a2cab63f7f48b54fab4da5781995624,
     type: 2}
+  CurrentWave: 0
   EnemyDied:
     m_PersistentCalls:
       m_Calls: []

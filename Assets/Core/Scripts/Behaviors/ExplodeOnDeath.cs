@@ -5,11 +5,16 @@ using UnityEngine;
 public class ExplodeOnDeath : MonoBehaviour {
 
 	public float ExplosionForce;
+	public float ExplosionForceScalar;
 	public float ExplosionRadius;
+
+	Toolbox _toolbox;
 
 	// Use this for initialization
 	void Start () {
+		_toolbox = Toolbox.Instance;
 
+		ExplosionForce = ExplosionForce + (ExplosionForceScalar * _toolbox.CurrentWave);
 	}
 
 	void Die () {

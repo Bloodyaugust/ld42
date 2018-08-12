@@ -228,6 +228,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StartingHealth: 2
+  HealthScalar: 1
+  Died:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &114092333110825654
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -252,6 +258,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BobAmount: 0.4
   MoveForce: 5
+  MoveForceScalar: 0.3
 --- !u!114 &114351960384008952
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -292,7 +299,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 138d863fd6fa6c843a913ef11a44eb77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PushForce: 15
+  PushForce: 10
+  PushForceScalar: 1
 --- !u!114 &114659609919559778
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -305,6 +313,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ExplosionForce: 30
+  ExplosionForceScalar: 5
   ExplosionRadius: 1.5
 --- !u!114 &114760225309869682
 MonoBehaviour:

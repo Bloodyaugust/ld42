@@ -13,7 +13,9 @@ public class Toolbox : Singleton<Toolbox> {
 
 	public AudioClip EnemyDiedAudioClip;
 	public AudioClip[] PlayerDamageAudioClips;
+	public GameObject PlayerPrefab;
 	public GameObject WaveCompletedText;
+	public int CurrentWave;
 
 	public UnityEvent EnemyDied = new UnityEvent();
 	public UnityEvent EnableWaves = new UnityEvent();
@@ -25,6 +27,7 @@ public class Toolbox : Singleton<Toolbox> {
 	AudioSource _audioSource;
 	DamageFromContactWithTag _playerDamage;
 	GameObject _player;
+	Health _playerHealth;
 	ProCamera2DSpeedBasedZoom _cameraZoom;
 	WaveController _waveController;
 
@@ -68,19 +71,30 @@ public class Toolbox : Singleton<Toolbox> {
 		if (scene.name == "game") {
 			GameLoaded.Invoke();
 
+			CurrentWave = 0;
+
 			_player = GameObject.FindWithTag("Player");
 			_playerDamage = _player.GetComponent<DamageFromContactWithTag>();
+			_playerHealth = _player.GetComponent<Health>();
 
 			_playerDamage.DamageTaken.AddListener(OnPlayerDamageTaken);
 			_playerDamage.DamageIntervalHalf.AddListener(OnPlayerDamageHalfTaken);
 			_playerDamage.DamageReset.AddListener(OnPlayerDamageReset);
+			_playerHealth.Died.AddListener(OnPlayerDied);
 
 			ProCamera2D.Instance.AddCameraTarget(_player.transform);
 		}
 	}
 
+	void OnPlayerDied () {
+		StartCoroutine(LoadGame());
+	}
+
 	void OnWaveCompleted () {
+		WaveCompletedText.GetComponent<TextMesh>().text = "Wave " + (CurrentWave + 1) + " Complete!";
 		Instantiate(WaveCompletedText, new Vector3(0, 0, WaveCompletedText.transform.position.z), Quaternion.identity);
+
+		CurrentWave++;
 
 		StartCoroutine(StartNextWave());
 	}
@@ -93,5 +107,31 @@ public class Toolbox : Singleton<Toolbox> {
 		Debug.Log("Starting next wave in " + _waveController.TimeBetweenWaves);
 		yield return new WaitForSeconds(_waveController.TimeBetweenWaves);
 		_waveController.EnableWaves();
+	}
+
+	IEnumerator LoadGame () {
+		yield return new WaitForSeconds(3);
+
+		GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+		for (int i = 0; i < enemies.Length; i++) {
+			Destroy(enemies[i]);
+		}
+
+		Instantiate(PlayerPrefab, PlayerPrefab.transform.position, Quaternion.identity);
+
+		GameLoaded.Invoke();
+
+		CurrentWave = 0;
+
+		_player = GameObject.FindWithTag("Player");
+		_playerDamage = _player.GetComponent<DamageFromContactWithTag>();
+		_playerHealth = _player.GetComponent<Health>();
+
+		_playerDamage.DamageTaken.AddListener(OnPlayerDamageTaken);
+		_playerDamage.DamageIntervalHalf.AddListener(OnPlayerDamageHalfTaken);
+		_playerDamage.DamageReset.AddListener(OnPlayerDamageReset);
+		_playerHealth.Died.AddListener(OnPlayerDied);
+
+		ProCamera2D.Instance.AddCameraTarget(_player.transform);
 	}
 }

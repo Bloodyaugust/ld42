@@ -13323,41 +13323,12 @@ Prefab:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4711054884575140, guid: f5fd2de4756886f4cbf637796100994d, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 2.71
-      objectReference: {fileID: 0}
-    - target: {fileID: 4711054884575140, guid: f5fd2de4756886f4cbf637796100994d, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4711054884575140, guid: f5fd2de4756886f4cbf637796100994d, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4711054884575140, guid: f5fd2de4756886f4cbf637796100994d, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4711054884575140, guid: f5fd2de4756886f4cbf637796100994d, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4711054884575140, guid: f5fd2de4756886f4cbf637796100994d, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4711054884575140, guid: f5fd2de4756886f4cbf637796100994d, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4711054884575140, guid: f5fd2de4756886f4cbf637796100994d, type: 2}
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 114426595433952950, guid: f5fd2de4756886f4cbf637796100994d,
-        type: 2}
-      propertyPath: ProjectileFireInterval
-      value: 0.05
+    - target: {fileID: 4711054884575140, guid: f5fd2de4756886f4cbf637796100994d, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f5fd2de4756886f4cbf637796100994d, type: 2}

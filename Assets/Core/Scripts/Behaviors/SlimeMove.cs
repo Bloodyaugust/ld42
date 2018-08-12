@@ -6,11 +6,13 @@ public class SlimeMove : MonoBehaviour {
 
 	public float BobAmount;
 	public float MoveForce;
+	public float MoveForceScalar;
 
 	float _randomizer;
 	float _startY;
 	GameObject _player;
 	Rigidbody2D _rigidbody;
+	Toolbox _toolbox;
 
 	// Use this for initialization
 	void Start () {
@@ -18,6 +20,9 @@ public class SlimeMove : MonoBehaviour {
 		_randomizer = Random.value * 8;
 		_rigidbody = GetComponent<Rigidbody2D>();
 		_startY = transform.localScale.y;
+		_toolbox = Toolbox.Instance;
+
+		MoveForce = MoveForce + (MoveForceScalar * _toolbox.CurrentWave);
 	}
 
 	// Update is called once per frame

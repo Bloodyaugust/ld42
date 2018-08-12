@@ -7,18 +7,22 @@ public class PlayerFire : MonoBehaviour {
 
 	public AudioClip ProjectileNoise;
 	public float ProjectileFireInterval;
+	public float ProjectileFireIntervalScalar;
+	public float ProjectileFireIntervalMax;
 	public float ProjectileForce;
 	public GameObject ProjectilePrefab;
 
 	AudioSource _audioSource;
 	float _timeToFire;
 	Player _player;
+	Toolbox _toolbox;
 
 	// Use this for initialization
 	void Start () {
 		_audioSource = GetComponent<AudioSource>();
 		_timeToFire = ProjectileFireInterval;
 		_player = ReInput.players.GetPlayer(0);
+		_toolbox = Toolbox.Instance;
 	}
 
 	// Update is called once per frame
@@ -36,7 +40,7 @@ public class PlayerFire : MonoBehaviour {
 			_audioSource.pitch = 1 + UnityEngine.Random.Range(-0.1f, 0.2f);
 			_audioSource.PlayOneShot(ProjectileNoise);
 
-			_timeToFire = ProjectileFireInterval;
+			_timeToFire = Mathf.Clamp(ProjectileFireInterval - (ProjectileFireIntervalScalar * _toolbox.CurrentWave), ProjectileFireIntervalMax, ProjectileFireInterval);
 		}
 	}
 }

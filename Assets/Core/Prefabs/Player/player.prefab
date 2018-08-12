@@ -189,7 +189,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ProjectileNoise: {fileID: 8300000, guid: f61f6b54a3d737f40b38d073df4889dc, type: 3}
-  ProjectileFireInterval: 0.5
+  ProjectileFireInterval: 0.25
+  ProjectileFireIntervalScalar: 0.025
+  ProjectileFireIntervalMax: 0.05
   ProjectileForce: 0.5
   ProjectilePrefab: {fileID: 1627882057404088, guid: 845ecb1215b0b4d4eb3fa4da8573c192,
     type: 2}
@@ -204,7 +206,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 613a30a6074832347a00c613c154936b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveForce: 5
+  MoveForce: 2
+  MoveForceScalar: 0.3
 --- !u!114 &114888365916376042
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -226,6 +229,11 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  DamageReset:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   DamageTaken:
     m_PersistentCalls:
       m_Calls: []
@@ -242,7 +250,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b66d9ed3e7a5f8744a8b862e7bedfb1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartingHealth: 10
+  StartingHealth: 4
+  HealthScalar: 1
+  Died:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!212 &212241286969663736
 SpriteRenderer:
   m_ObjectHideFlags: 1

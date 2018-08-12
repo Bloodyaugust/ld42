@@ -85,7 +85,7 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1299796366552890}
-  m_Text: Wave Complete!
+  m_Text: Wave 1 Complete!
   m_OffsetZ: 0
   m_CharacterSize: 0.1
   m_LineSpacing: 1
