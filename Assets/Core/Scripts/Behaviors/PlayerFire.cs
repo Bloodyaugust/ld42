@@ -5,15 +5,18 @@ using Rewired;
 
 public class PlayerFire : MonoBehaviour {
 
+	public AudioClip ProjectileNoise;
 	public float ProjectileFireInterval;
 	public float ProjectileForce;
 	public GameObject ProjectilePrefab;
 
+	AudioSource _audioSource;
 	float _timeToFire;
 	Player _player;
 
 	// Use this for initialization
 	void Start () {
+		_audioSource = GetComponent<AudioSource>();
 		_timeToFire = ProjectileFireInterval;
 		_player = ReInput.players.GetPlayer(0);
 	}
@@ -29,6 +32,9 @@ public class PlayerFire : MonoBehaviour {
 			worldMousePosition = new Vector3(worldMousePosition.x, worldMousePosition.y, 0);
 
 			newProjectile.GetComponent<Rigidbody2D>().AddForce((worldMousePosition - transform.position).normalized * ProjectileForce, ForceMode2D.Impulse);
+
+			_audioSource.pitch = 1 + UnityEngine.Random.Range(-0.1f, 0.2f);
+			_audioSource.PlayOneShot(ProjectileNoise);
 
 			_timeToFire = ProjectileFireInterval;
 		}
