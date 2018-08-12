@@ -15,17 +15,23 @@ public class DamageFromContactWithTag : MonoBehaviour {
 	public UnityEvent DamageTaken = new UnityEvent();
 
 	bool _halfIntervalFired;
+	Dictionary<int, GameObject> _contactingGameObjects;
 	float _timeToDamage;
 	Health _health;
-	List<int> _contactingGameObjects;
 
 	// Use this for initialization
 	void Start () {
-		_contactingGameObjects = new List<int>();
+		_contactingGameObjects = new Dictionary<int, GameObject>();
 		_health = GetComponent<Health>();
 	}
 
 	void Update () {
+		List<int> keys = new List<int>(_contactingGameObjects.Keys);
+		foreach (int key in keys) {
+			if (_contactingGameObjects[key] == null) {
+				_contactingGameObjects.Remove(key);
+			}
+		}
 		if (_contactingGameObjects.Count == 0) {
 			if (_timeToDamage < DamageInterval) {
 				DamageReset.Invoke();
@@ -51,7 +57,7 @@ public class DamageFromContactWithTag : MonoBehaviour {
 
 	void OnCollisionEnter2D (Collision2D collision) {
 		if (DamageTags.Contains(collision.gameObject.tag)) {
-			_contactingGameObjects.Add(collision.gameObject.GetInstanceID());
+			_contactingGameObjects.Add(collision.gameObject.GetInstanceID(), collision.gameObject);
 		}
 	}
 
@@ -63,7 +69,7 @@ public class DamageFromContactWithTag : MonoBehaviour {
 
 	void OnTriggerEnter2D (Collider2D collider) {
 		if (DamageTags.Contains(collider.gameObject.tag)) {
-			_contactingGameObjects.Add(collider.gameObject.GetInstanceID());
+			_contactingGameObjects.Add(collider.gameObject.GetInstanceID(), collider.gameObject);
 		}
 	}
 

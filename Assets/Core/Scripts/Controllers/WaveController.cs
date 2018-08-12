@@ -52,10 +52,17 @@ public class WaveController : MonoBehaviour {
 							_currentWaveIndex = 0;
 						}
 
+						_currentWave = Waves[_currentWaveIndex];
+						_spawnsLeft = _currentWave.NumberSpawns[_currentSpawnIndex];
+						_timeToNextSpawn = _currentWave.TimeBetweenSpawns;
+					} else {
 						_spawnsLeft = _currentWave.NumberSpawns[_currentSpawnIndex];
 						_timeToNextSpawn = _currentWave.TimeBetweenSpawns;
 					}
 				} else {
+					Debug.Log("Spawning on wave " + _currentWaveIndex);
+					Debug.Log("Spawns left " + _spawnsLeft);
+					Debug.Log("Spawn index " + _currentSpawnIndex);
 					Instantiate(_currentWave.EnemyPrefabs[_currentSpawnIndex], _spawnPoints[Random.Range(0, _spawnPoints.Length)].transform.position, Quaternion.identity);
 
 					_spawnsLeft--;

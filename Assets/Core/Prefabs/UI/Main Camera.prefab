@@ -319,6 +319,9 @@ MonoBehaviour:
   Waves:
   - {fileID: 11400000, guid: 6d3c1f16b3a88ae4ea379cbe47694db4, type: 2}
   - {fileID: 11400000, guid: 1de59f75f92dc2e43b03b9bc702dbcfe, type: 2}
+  - {fileID: 11400000, guid: 2176343e0e9648542a468d94b9206bd1, type: 2}
+  - {fileID: 11400000, guid: 2bc921a1753b6c440a4b22d08cf575d2, type: 2}
+  - {fileID: 11400000, guid: b89e79750a7e6924ea4a2b6fc59f5036, type: 2}
 --- !u!124 &124284705815189812
 Behaviour:
   m_ObjectHideFlags: 1
